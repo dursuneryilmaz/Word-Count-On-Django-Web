@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WordCount List</title>
+</head>
+<body>
+<h1>WordCount List </h1> <br>
+<a href="{% url 'WordCount:create' %}">Create</a> <br><br>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>AppName</th>
+        <th>Comments</th>
+        <th>Timestamp</th>
+        <th>HasDone</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for wc in wcs %}
+    <tr>
+        <td>{{ wc.title }}</td>
+        <td>{{ wc.app_name }}</td>
+        <td> {{ wc.comments }} </td>
+        <td>{{ wc.timestamp }}</td>
+        <td>{{ wc.active }}</td>
+
+        <td>
+            {% if wc.active%}
+            <a href="{% url 'WordCount:detail' idx=wc.id %}">Detail</a>
+            <a href="{% url 'WordCount:delete' idx=wc.id %}">Delete</a>
+
+            {% else %}
+            <a href="{% url 'WordCount:run' idx=wc.id %}">Run</a>
+            {% endif%}
+
+        </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+</body>
+</html>

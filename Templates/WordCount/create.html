@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WordCount Create</title>
+</head>
+<body>
+<h1>WordCount Create</h1><br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+<br>
+<br>
+<a href="{% url 'WordCount:index'%}">Back</a><br>
+</body>
+</html>

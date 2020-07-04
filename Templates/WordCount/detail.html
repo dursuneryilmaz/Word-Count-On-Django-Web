@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WordCount( {{wc.id}} )</title>
+</head>
+<body>
+<h1>WordCount: {{wc.title}}</h1>
+
+<label>Lines:</label> {{wc.lines}} <br>
+<label>File:</label> {{wc.file}} <br>
+<label>Comments:</label> {{wc.comments}} <br>
+<h2>Words</h2>
+<br>
+<p>{{wc.words}}</p>
+<br>
+<br>
+<a href="{% url 'WordCount:index'%}">Back</a><br>
+
+</body>
+</html>
